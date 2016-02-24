@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"viewLoaded");
+    //NSLog(@"viewLoaded");
     //self.calendar = [[Calendar alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
     NSTimer *timer;
@@ -58,7 +58,7 @@
 }
 
 -(void)ifSameDayReactivateButton {
-    NSLog(@"checking if same day");
+    //NSLog(@"checking if same day");
     if ([self sameDay:[[Day alloc] initWithDate:[NSDate date]] andDay:self.calendar.days[0]]) {
         [self.addDayButton setEnabled:NO];
     }
@@ -97,16 +97,16 @@
         Day *day = self.calendar.days[i];
         if (day.dayType == 0) {
             officeDays += 1;
-            NSLog(@"was office day");
+            //NSLog(@"was office day");
         }
         if (day.dayType == 1) {
             wfhDays += 1;
-            NSLog(@"was wfh day");
+            //NSLog(@"was wfh day");
         }
     }
-    NSLog(@"%ld - %ld / %ld (office/wfh", (long) days, (long) officeDays, (long) wfhDays);
+    //NSLog(@"%ld - %ld / %ld (office/wfh", (long) days, (long) officeDays, (long) wfhDays);
     CGFloat percent = (CGFloat) officeDays / ((CGFloat) officeDays + (CGFloat) wfhDays);
-    NSLog(@"new percent: %f", percent);
+    //NSLog(@"new percent: %f", percent);
     return (CGFloat) percent;
 }
 
@@ -117,7 +117,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"self.calendar.days count %ld", (long) [self.calendar.days count]);
+    //NSLog(@"self.calendar.days count %ld", (long) [self.calendar.days count]);
     return [self.calendar.days count];
 }
 
@@ -145,7 +145,7 @@
         cell.textLabel.text = @"N/A";
     }
     cell.detailTextLabel.text = [self.dateFormatter stringFromDate:day.date];
-    NSLog(@"cell.textLabel %@", cell.textLabel.text);
+    //NSLog(@"cell.textLabel %@", cell.textLabel.text);
     return cell;
 }
 
@@ -154,7 +154,7 @@
     Day *day = [self.calendar.days objectAtIndex:indexPath.row];
     day.dayType++;
     day.dayType %= 3;
-    NSLog(@"%d dayType", day.dayType);
+    //NSLog(@"%d dayType", day.dayType);
     [Calendar saveCalendarToArchive:self.calendar];
     self.donutView.percentage = [self getPercentageOfOfficeDays];
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:YES];
