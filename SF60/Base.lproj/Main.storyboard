@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚖Days in the Office ⚖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHX-Sd-N52">
+                                <rect key="frame" x="8" y="20" width="359" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAi-Od-b3K" customClass="MCPercentageDoughnutView">
+                                <rect key="frame" x="60" y="72" width="255" height="255"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.052206503378378379" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GAi-Od-b3K" secondAttribute="height" multiplier="1:1" id="hs6-w5-CFz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJB-7I-7iF">
+                                <rect key="frame" x="16" y="335" width="82" height="30"/>
+                                <state key="normal" title="Add Day 📅"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UIG-f7-2xh">
+                                <rect key="frame" x="16" y="373" width="343" height="286"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dayCell" textLabel="cS7-kD-22v" detailTextLabel="Dtd-gX-EQ7" style="IBUITableViewCellStyleSubtitle" id="FFL-b0-wcP">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FFL-b0-wcP" id="U9R-Qu-deh">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cS7-kD-22v">
+                                                    <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dtd-gX-EQ7">
+                                                    <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Jg0-LW-vPt"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dZc-Yp-UBG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="GAi-Od-b3K" secondAttribute="trailing" constant="44" id="0pl-ox-JGy"/>
+                            <constraint firstItem="lJB-7I-7iF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2BR-au-Ybr"/>
+                            <constraint firstItem="GAi-Od-b3K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="48P-HN-cez"/>
+                            <constraint firstItem="JHX-Sd-N52" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="8fx-uD-YK1"/>
+                            <constraint firstItem="GAi-Od-b3K" firstAttribute="top" secondItem="JHX-Sd-N52" secondAttribute="bottom" constant="8" id="AUt-E5-8dD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JHX-Sd-N52" secondAttribute="bottom" constant="603" id="Ook-K1-1D6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UIG-f7-2xh" secondAttribute="bottom" constant="8" id="U2M-zw-7hk"/>
+                            <constraint firstAttribute="trailing" secondItem="JHX-Sd-N52" secondAttribute="trailing" constant="8" id="bJq-Bm-XrO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UIG-f7-2xh" secondAttribute="trailing" id="dPN-Jf-HNx"/>
+                            <constraint firstItem="JHX-Sd-N52" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gWx-kL-NV5"/>
+                            <constraint firstItem="UIG-f7-2xh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gnS-MX-hV0"/>
+                            <constraint firstItem="lJB-7I-7iF" firstAttribute="top" secondItem="GAi-Od-b3K" secondAttribute="bottom" constant="8" id="hGE-a2-CZ6"/>
+                            <constraint firstItem="UIG-f7-2xh" firstAttribute="top" secondItem="lJB-7I-7iF" secondAttribute="bottom" constant="8" id="nKP-M8-OFR"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addDayButton" destination="lJB-7I-7iF" id="VSo-fa-laM"/>
+                        <outlet property="donutView" destination="GAi-Od-b3K" id="k0D-B6-b5j"/>
+                        <outlet property="tableView" destination="UIG-f7-2xh" id="Aje-xh-ma5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="8CC-f1-NpN">
+                    <rect key="frame" x="0.0" y="0.0" width="380" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-05-Xe3">
+                            <rect key="frame" x="323" y="0.0" width="51" height="31"/>
+                        </switch>
+                        <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eGE-7J-UG4">
+                            <rect key="frame" x="30" y="39" width="320" height="81"/>
+                            <date key="date" timeIntervalSinceReferenceDate="477942751.81135601">
+                                <!--2016-02-23 17:52:31 +0000-->
+                            </date>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="279.5" y="314.5"/>
+        </scene>
+    </scenes>
+</document>
